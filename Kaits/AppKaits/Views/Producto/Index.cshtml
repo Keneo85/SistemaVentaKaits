@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Entidad.ProductoEN>
+
+@{
+    ViewBag.Title = "Producto";
+}
+
+<button type='button' class='btn btn-outline-primary nuevoProducto btn-sm'
+        data-target="#modal_producto_nuevo" data-toggle="modal"
+        data-backdrop="static" data-keyboard="false">
+    Nuevo Producto
+</button>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                <button type='button' class='btn btn-outline-secondary editarProducto btn-sm'
+                        data-idproducto="@item.Id_Producto"
+                        data-iddesp="@item.Descripcion"
+                        data-idprecio="@item.Precio"
+                        data-target="#modal_producto_editar" data-toggle="modal"
+                        data-backdrop="static" data-keyboard="false">
+                    Editar
+                </button>
+
+                <button type='button' class='btn btn-outline-danger eliminarProducto btn-sm' data-idproducto=@item.Id_Producto>Eliminar</button>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.Partial("_Modal_Producto_Editar")
+@Html.Partial("_Modal_Producto_Nuevo")
+<script src="~/JavaScript/Jsutilies.js"></script>

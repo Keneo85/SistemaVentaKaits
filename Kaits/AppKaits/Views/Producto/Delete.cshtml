@@ -1,0 +1,37 @@
+﻿@model Entidad.ProductoEN
+
+@{
+    ViewBag.Title = "Eliminar Producto";
+}
+
+<h4>¿Quieres eliminar el regristro?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

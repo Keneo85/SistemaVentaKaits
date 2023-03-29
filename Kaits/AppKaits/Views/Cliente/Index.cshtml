@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Entidad.ClienteEN>
+
+@{
+    ViewBag.Title = "Cliente";
+}
+
+<button type='button' class='btn btn-outline-primary nuevoCliente btn-sm'
+        data-target="#modal_cliente_nuevo" data-toggle="modal"
+        data-backdrop="static" data-keyboard="false">
+    Nuevo Cliente
+</button>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DNI)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNI)
+            </td>
+            <td>
+                <button type='button' class='btn btn-outline-secondary editarCliente btn-sm'
+                        data-idcliente="@item.Id_Cliente"
+                        data-nomcli="@item.Nombre"
+                        data-apep="@item.ApellidoPaterno"
+                        data-apem="@item.ApellidoMaterno"
+                        data-dni="@item.DNI"
+                        data-target="#modal_cliente_editar" data-toggle="modal"
+                        data-backdrop="static" data-keyboard="false">
+                    Editar
+                </button>
+
+                <button type='button' class='btn btn-outline-danger eliminarCliente btn-sm' data-idcliente=@item.Id_Cliente>Eliminar</button>
+            </td>
+        </tr>
+    }
+</table>
+
+
+@Html.Partial("_Modal_Cliente_Editar")
+@Html.Partial("_Modal_Cliente_Nuevo")
+<script src="~/JavaScript/Jsutilies.js"></script>
+

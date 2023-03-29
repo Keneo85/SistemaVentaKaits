@@ -1,0 +1,13 @@
+Para le desarrollo de esta prueba:
+
+- ejecutar el archivo query "\Kaits\Query" con windows authentication, ya que la cadena de conexion esta con integration security, para no tener que estar poniendo 
+  la contraseña del servidor. De una sola ejecucion creara la base de datos los store procedure y los insert, no importa si la ejecuta mas de una vez ya que tome en cuenta la validacion 
+  para que todas las rutinas se generen nuevamente al ser ejecutada varias veces.
+
+- paginas creadas: mantenimiento de cliente, producto y grabacion de pedidos
+- se ha usado visual studio 2022
+- se ha usado librerias jquery, boostrap, sweetalert
+- se ha conbinado tanto le uso de procesos de consultas, eliminar, grabar, editar con razor y jquery, ya que conozco ambas tecnologias.
+- se ha manejado el uso de TransactionScope para el guardado en cascada del pedido (cabecera - detalle) 
+- se ha usado modales para rutinas en una misma page.
+- se realizo validaciones antes de grabar para el pedido

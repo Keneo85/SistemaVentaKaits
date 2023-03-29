@@ -1,0 +1,12 @@
+D:\Datos\Developer\Kaits\Entidad\bin\Debug\Entidad.dll
+D:\Datos\Developer\Kaits\Entidad\bin\Debug\Entidad.pdb
+D:\Datos\Developer\Kaits\Entidad\obj\Debug\Entidad.csproj.AssemblyReference.cache
+D:\Datos\Developer\Kaits\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+D:\Datos\Developer\Kaits\Entidad\obj\Debug\Entidad.dll
+D:\Datos\Developer\Kaits\Entidad\obj\Debug\Entidad.pdb
+D:\Datos\Developer\Kaits\Kaits\Entidad\bin\Debug\Entidad.dll
+D:\Datos\Developer\Kaits\Kaits\Entidad\bin\Debug\Entidad.pdb
+D:\Datos\Developer\Kaits\Kaits\Entidad\obj\Debug\Entidad.csproj.AssemblyReference.cache
+D:\Datos\Developer\Kaits\Kaits\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+D:\Datos\Developer\Kaits\Kaits\Entidad\obj\Debug\Entidad.dll
+D:\Datos\Developer\Kaits\Kaits\Entidad\obj\Debug\Entidad.pdb

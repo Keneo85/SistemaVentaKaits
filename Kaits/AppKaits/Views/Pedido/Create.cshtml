@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Registrar Pedido";
+}
+
+<h2>Nuevo Pedido</h2>
+
+<div class="container">
+    <form class="needs-validation" novalidate id="frmDataPedido">
+        <div class="form-row">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Nro Pedido</label>
+                        <input type="text" class="form-control" id="idpedido" value=@ViewData["idpedido"] disabled="disabled" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Fecha</label>
+                        <input type="date" class="form-control" id="idfechapedido" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label hidden="hidden">Id_Cliente</label>
+                        <input type="text" class="form-control" id="idcliente" hidden="hidden" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Cliente</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" id="nomcliente" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"
+                                        data-target="#modal_cliente" data-toggle="modal"
+                                        data-backdrop="static" data-keyboard="false"
+                                        onclick="listarCliente()">
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-none">
+                    <div class="form-group mb-3">
+                        <label>Id_Producto</label>
+                        <input type="text" class="form-control" id="idproducto" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Producto</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar producto" aria-label="Recipient's username" aria-describedby="basic-addon2" id="desprod" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"
+                                        data-target="#modal_producto" data-toggle="modal"
+                                        data-backdrop="static" data-keyboard="false"
+                                        onclick="listarProduto()">
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Precio</label>
+                        <input type="text" class="form-control" id="precprod" value="0.0" disabled="disabled" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label>Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group pt-4">
+                        <input type="button" value="Agregar" class="btn btn-primary" id="btnAgregar" />
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped" id="grilla">
+                <thead align="right">
+                    <tr>
+                        <th hidden="hidden">Id_Pedido</th>
+                        <th hidden="hidden">Id_Producto</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Sub total</th>
+                        <th>Igv</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbdetalle">
+                </tbody>
+            </table>
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <label>Sub total</label>
+                    <input type="text" class="form-control" id="subtotal" style="text-align: right" value="0.0" disabled="disabled" required />
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <label>IGV</label>
+                    <input type="text" class="form-control" id="igv" style="text-align: right" value="0.0" disabled="disabled" required />
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <label>Total</label>
+                    <input type="text" class="form-control" id="total" style="text-align: right" value="0.0" disabled="disabled" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Grabar" class="btn btn-success" id="btnGrabar" required />
+                </div>
+            </div>
+            <div class="form-group pt-4">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink("Regresar", "Index")
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="~/JavaScript/Jsutilies.js"></script>
+@Html.Partial("_Modal_Cliente")
+@Html.Partial("_Modal_Producto")
